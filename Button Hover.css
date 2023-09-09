@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #11110f;
+}
+a {
+    color: #effffb;
+    text-transform: uppercase;
+    padding: 20px 60px;
+    text-decoration: none;
+    overflow: hidden;
+    border-radius: 10px;
+    transform: scale(2);
+}
+a .effect {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: #6488ff;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.7);
+    z-index: -1;
+    transition: 0.6s;
+}
+a .effect::after,
+a .effect::before {
+    position: absolute;
+    content: "";
+    width: 200%;
+    height: 200%;
+}
+a .effect::after {
+    border-radius: 45%;
+    background: rgba(20, 20, 20, 1);
+    box-shadow: 0 0 10px 5px #7293ff, inset 0 0 5px #7293ff;
+    animation: animate 5s linear infinite;
+    opacity: 0.8;
+}
+a .effect::before {
+    border-radius: 40%;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.5),
+    inset 0 0 5px rgba(26, 26, 26, 0.5);
+    background: rgba(26, 26, 26, 0.5);
+    animation: animate 7s linear infinite;
+}
+@keyframes animate {
+    0% {
+        transform: translate(-25%, -75%) rotate(0);
+    }
+    100% {
+        transform: translate(-25%, -75%) rotate(360deg);
+    }
+}
+a:hover .effect {
+    top: -120px;
+}
+a:hover {
+    box-shadow: 0 0 5px #7293ff, inset 0 0 5px #7293ff;
+    transition-delay: 0.2s;
+}
